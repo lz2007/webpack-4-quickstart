@@ -1,0 +1,13 @@
+.diva {
+    width: 300px;
+    height: 300px;
+    background-color: seagreen;
+    display: flex;
+}
+
+.divb {
+    flex: 1;
+    color: sienna;
+    font-size: 18px;
+    text-align: center;
+}
