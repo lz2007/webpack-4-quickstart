@@ -1,7 +1,8 @@
 ## webpack-4-quickstart
+
  webpack4 从0配置到项目搭建
  
-## 项目搭建 
+### 项目搭建 
 
 1. js的处理：转换 ES6 代码，解决浏览器兼容问题
 2. css的处理：编译css，自动添加前缀，抽取css到独立文件
@@ -12,13 +13,13 @@
 
 
 
-## 使用说明
+### 使用说明
 
 1. npm install
 2. npm dev
 3. npm build
 
-## 目录结构
+### 目录结构
 
 ```
  ├── public
@@ -38,9 +39,9 @@
   └── webpack.config.js
 ```
 
-## 浏览器支持
+### 浏览器支持
 
 现代浏览器
 
-## 参考网站
+### 参考网站
 https://segmentfault.com/a/1190000015490721
