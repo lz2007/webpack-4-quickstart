@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
@@ -9,11 +10,17 @@ module.exports = (env, argv) => {
     const devMode = argv.mode !== 'production'
     return {
         entry: [
-            "babel-polyfill",
-            path.join(__dirname, './src/index.js')
+            path.join(__dirname, './src/main.js')
         ],
         module: {
             rules: [{
+                    test: /\.vue$/,
+                    loader: 'vue-loader',
+                    options: {
+                        loaders: {}
+                    }
+                },
+                {
                     test: /\.js$/,
                     exclude: /(node_modules|bower_components)/,
                     use: {
@@ -29,6 +36,15 @@ module.exports = (env, argv) => {
                         devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                         'css-loader',
                         'postcss-loader'
+                    ]
+                },
+                {
+                    test: /\.styl$/,
+                    use: [
+                        devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                        'css-loader',
+                        'postcss-loader',
+                        'stylus-loader'
                     ]
                 },
                 {
@@ -64,7 +80,14 @@ module.exports = (env, argv) => {
             new MiniCssExtractPlugin({
                 filename: "[name].css",
                 chunkFilename: "[id].css"
-            })
-        ]
+            }),
+            new VueLoaderPlugin()
+        ],
+
+        devServer: {
+            proxy: {
+                '/gmvcs': 'http://192.168.55.156:8201'
+            }
+        }
     }
 }
