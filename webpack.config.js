@@ -58,7 +58,7 @@ module.exports = (env, argv) => {
                     }]
                 },
                 {
-                    test: /\.(png|jpg|gif)$/,
+                    test: /\.(png|jpg|gif|svg|eot|woff|woff2|ttf)$/,
                     use: [{
                         loader: 'file-loader',
                         options: {
@@ -70,6 +70,14 @@ module.exports = (env, argv) => {
                     }]
                 }
             ]
+        },
+        resolve: {
+            //配置别名，在项目中可缩减引用路径
+            alias: {
+                'vue$': 'vue/dist/vue.esm.js',
+                '@': path.resolve('src'),
+                '&': path.resolve('src/components')
+            }
         },
         plugins: [
             new HtmlWebPackPlugin({
