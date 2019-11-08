@@ -39,7 +39,7 @@ module.exports = (env, argv) => {
                     ]
                 },
                 {
-                    test: /\.styl$/,
+                    test: /\.styl/,
                     use: [
                         devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                         'css-loader',
