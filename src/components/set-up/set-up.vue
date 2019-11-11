@@ -1,13 +1,16 @@
 <!--
  * @Author: your name
- * @Date: 2019-11-04 09:22:50
- * @LastEditTime: 2019-11-11 17:12:06
+ * @Date: 2019-11-08 16:41:51
+ * @LastEditTime: 2019-11-11 17:13:12
  * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: \webpack-4-quickstart\src\components\home\home.vue
+ * @FilePath: \webpack-4-quickstart\src\components\set-up\set-up.vue
  -->
+<!-- 设置 -->
 <template>
-  <div class="page-container home">home</div>
+  <div class="page-container set-up">
+      set-up
+  </div>
 </template>
 
 <script>
@@ -28,6 +31,4 @@ export default {
 
 </script>
 <style lang='stylus' type='text/stylus' scoped>
-.home
-  height 100%
 </style>
