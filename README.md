@@ -2,15 +2,6 @@
 
  webpack4 从0配置到项目搭建
  
-### 项目搭建 
-
-1. js的处理：转换 ES6 代码，解决浏览器兼容问题
-2. css的处理：编译css，自动添加前缀，抽取css到独立文件
-3. html的处理：复制并压缩html文件
-4. dist的清理：打包前清理源目录文件
-5. assets的处理：静态资源处理
-6. server的启用：development 模式下启动服务器并实时刷新
-
 
 
 ### 使用说明
@@ -39,7 +30,7 @@
   └── webpack.config.js
 ```
 
-###### 从0开始配置
+### 从0开始配置
 
 终端执行以下语句
 
@@ -106,7 +97,7 @@ console.log('test');
 
 终端执行 `npm run dev` 或者 `npm run build` 成功打包出了 `dist/main.js`
 
-###### 项目搭建
+### 项目搭建
 
 项目搭建需求
 
@@ -119,7 +110,7 @@ console.log('test');
 * ###### 配置别名，在项目中可缩减引用路径
 * ###### 配置反向代理
 
-###### 转换 ES6 代码，解决浏览器兼容问题
+### 转换 ES6 代码，解决浏览器兼容问题
 
 用 babel 转换 ES6 代码需要使用到 babel-loader
 
@@ -220,7 +211,7 @@ class Person {}
 ```
 npm run dev 查看打包出了 `dist/main.js`文件
  
-###### 编译css，自动添加前缀，抽取css到独立文件
+### 编译css，自动添加前缀，抽取css到独立文件
 将CSS提取为独立的文件的插件
 ```
 npm i mini-css-extract-plugin css-loader style-loader -D
@@ -307,7 +298,7 @@ module.exports = {
 }
 ```
 
-###### 复制并压缩html文件 [html-webpack-plugin](https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin)
+### 复制并压缩html文件 [html-webpack-plugin](https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin)
 
 ```
 npm i html-webpack-plugin html-loader -D
@@ -360,7 +351,7 @@ npm i html-webpack-plugin html-loader -D
     };
 ```
 
-###### 打包前清理源目录文件 [clean-webpack-plugin](https://webpack.js.org/guides/output-management/#cleaning-up-the-dist-folder)
+### 打包前清理源目录文件 [clean-webpack-plugin](https://webpack.js.org/guides/output-management/#cleaning-up-the-dist-folder)
 
 ```
 npm i clean-webpack-plugin -D
@@ -376,7 +367,7 @@ npm i clean-webpack-plugin -D
   };
 ```
 
-###### 静态资源处理 [file-loader](https://webpack.js.org/loaders/file-loader/)
+### 静态资源处理 [file-loader](https://webpack.js.org/loaders/file-loader/)
 ```
 cnpm install file-loader -D
 ```
@@ -402,7 +393,7 @@ cnpm install file-loader -D
     }
 ```
 
-###### development 模式下启动服务器并实时刷新 [webpack-dev-server](https://webpack.js.org/configuration/dev-server)
+### development 模式下启动服务器并实时刷新 [webpack-dev-server](https://webpack.js.org/configuration/dev-server)
 ```
 npm i webpack-dev-server -D
 ```
@@ -415,7 +406,7 @@ npm i webpack-dev-server -D
 },
 ```
 
-###### 配置别名，在项目中可缩减引用路径
+### 配置别名，在项目中可缩减引用路径
 
 ```
 module.exports = (env, argv) => {
@@ -432,7 +423,7 @@ module.exports = (env, argv) => {
 }
 ```
 
-###### 反向代理
+### 反向代理
 修改 `webpack.config.js` 配置文件
 ```
 module.exports = (env, argv) => {
